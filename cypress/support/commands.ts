@@ -36,11 +36,25 @@
 //   }
 // }
 
-declare namespace Cypress {
-	interface Chainable {
-		signUp(fullName: string, email: string): void;
-		getLinks(): Chainable<Element>;
-		getText(): any;
+export {};
+
+declare global {
+	namespace Cypress {
+		interface Chainable {
+			/**
+			 * Sign into application
+			 * @param fullName Provide full name
+			 * @param email  email
+			 * @example
+			 * //this is an example about how to use signUp
+			 * cy.signUp('Harish Renukunta', 'harish_renukunta@google.com')
+			 * //this will initiate sign up process
+			 */
+			signUp(fullName: string, email: string): void;
+			getLinks(): Chainable<Element>;
+			getText(): any;
+			getFrame(frameSelector: string, documentIndx: string): Chainable<Element>;
+		}
 	}
 }
 

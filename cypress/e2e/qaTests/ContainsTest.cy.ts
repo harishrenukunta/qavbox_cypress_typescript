@@ -1,5 +1,3 @@
-///<reference types='cypress'/>
-
 describe('Illustration of contains', () => {
 	beforeEach(() => {
 		cy.visit('https://qavbox.github.io/demo/signup');
